@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function HeroSection() {
+export default function Omar() {
   return (
     <section className="w-full bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
