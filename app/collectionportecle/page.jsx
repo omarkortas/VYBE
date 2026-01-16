@@ -14,7 +14,6 @@ export default function PorteClesPage() {
   ];
 
   const porteCles = [
-
     { id: 1, image: '/12.jpg', name: 'Chat Mignon', category: 'animaux', price: 'prv' },
     { id: 2, image: '/11.jpg', name: 'Donut Gourmand', category: 'nourriture', price: 'prv' },
     { id: 3, image: '/13.jpg', name: 'Fleur Rose', category: 'nature', price: 'prv' },
@@ -44,14 +43,13 @@ export default function PorteClesPage() {
                 ÉDITION LIMITÉE
               </span>
             </div>
-            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 leading-tight mb-6">
+            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-serif text-gray-900 leading-tight mb-6">
               Porte-clés
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 font-light max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-700 font-serif max-w-2xl mx-auto leading-relaxed">
               Porte-clés artisanaux en résine précieuse, faits main avec amour
             </p>
-
-                     </div>
+          </div>
         </div>
       </section>
 
@@ -91,7 +89,7 @@ export default function PorteClesPage() {
                 {/* Badge édition */}
                 {item.edition === 'exclusive' && (
                   <div className="absolute top-4 right-4 z-10">
-                    <span className="bg-black text-white text-xs font-bold px-3 py-1 rounded-full tracking-wider">
+                    <span className="bg-black text-white text-xs font-serif px-3 py-1 rounded-full tracking-wider">
                       EXCLUSIF
                     </span>
                   </div>
@@ -119,7 +117,7 @@ export default function PorteClesPage() {
                 
                 <div className="p-6 space-y-4">
                   <div>
-                    <h3 className="font-serif text-2xl font-bold text-gray-900 mb-2">
+                    <h3 className="font-serif text-2xl font-serif text-gray-900 mb-2">
                       {item.name}
                     </h3>
                     <p className="text-sm text-gray-600 font-light">
@@ -129,7 +127,7 @@ export default function PorteClesPage() {
                   
                   <div className="flex items-end justify-between pt-4 border-t border-gray-100">
                     <div>
-                      <span className="text-3xl font-bold text-black">{item.price}€</span>
+                      <span className="text-3xl font-serif text-black">{item.price}€</span>
                       <p className="text-xs text-gray-500 mt-1">Livraison offerte</p>
                     </div>
                     <button className="
@@ -160,7 +158,7 @@ export default function PorteClesPage() {
                 NOTRE SAVOIR-FAIRE
               </span>
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="font-serif text-4xl md:text-5xl font-serif text-gray-900 mb-4">
               Création artisanale
             </h2>
             <p className="text-lg text-gray-600 font-light max-w-2xl mx-auto">
@@ -173,7 +171,7 @@ export default function PorteClesPage() {
               <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-pink-100 to-purple-100 rounded-full flex items-center justify-center">
                 <div className="text-4xl">🎨</div>
               </div>
-              <h3 className="font-serif text-xl font-bold text-gray-900 mb-3">
+              <h3 className="font-serif text-xl font-serif text-gray-900 mb-3">
                 1. Design
               </h3>
               <p className="text-gray-600 font-light text-sm leading-relaxed">
@@ -185,7 +183,7 @@ export default function PorteClesPage() {
               <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-100 to-blue-100 rounded-full flex items-center justify-center">
                 <div className="text-4xl">🖐️</div>
               </div>
-              <h3 className="font-serif text-xl font-bold text-gray-900 mb-3">
+              <h3 className="font-serif text-xl font-serif text-gray-900 mb-3">
                 2. Moulage
               </h3>
               <p className="text-gray-600 font-light text-sm leading-relaxed">
@@ -197,7 +195,7 @@ export default function PorteClesPage() {
               <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-100 to-green-100 rounded-full flex items-center justify-center">
                 <div className="text-4xl">✨</div>
               </div>
-              <h3 className="font-serif text-xl font-bold text-gray-900 mb-3">
+              <h3 className="font-serif text-xl font-serif text-gray-900 mb-3">
                 3. Finition
               </h3>
               <p className="text-gray-600 font-light text-sm leading-relaxed">
@@ -209,7 +207,7 @@ export default function PorteClesPage() {
               <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-100 to-pink-100 rounded-full flex items-center justify-center">
                 <div className="text-4xl">📦</div>
               </div>
-              <h3 className="font-serif text-xl font-bold text-gray-900 mb-3">
+              <h3 className="font-serif text-xl font-serif text-gray-900 mb-3">
                 4. Emballage
               </h3>
               <p className="text-gray-600 font-light text-sm leading-relaxed">
@@ -226,7 +224,7 @@ export default function PorteClesPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-pink-50 to-purple-50 p-8 rounded-2xl text-center border border-gray-100">
               <div className="text-5xl mb-4">💎</div>
-              <h3 className="font-serif text-2xl font-bold text-gray-900 mb-3">
+              <h3 className="font-serif text-2xl font-serif text-gray-900 mb-3">
                 Résine Premium
               </h3>
               <p className="text-gray-700 font-light leading-relaxed">
@@ -236,7 +234,7 @@ export default function PorteClesPage() {
 
             <div className="bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl text-center border border-gray-100">
               <div className="text-5xl mb-4">🎯</div>
-              <h3 className="font-serif text-2xl font-bold text-gray-900 mb-3">
+              <h3 className="font-serif text-2xl font-serif text-gray-900 mb-3">
                 Pièces Uniques
               </h3>
               <p className="text-gray-700 font-light leading-relaxed">
@@ -246,7 +244,7 @@ export default function PorteClesPage() {
 
             <div className="bg-gradient-to-br from-blue-50 to-pink-50 p-8 rounded-2xl text-center border border-gray-100">
               <div className="text-5xl mb-4">❤️</div>
-              <h3 className="font-serif text-2xl font-bold text-gray-900 mb-3">
+              <h3 className="font-serif text-2xl font-serif text-gray-900 mb-3">
                 Fait avec Amour
               </h3>
               <p className="text-gray-700 font-light leading-relaxed">
@@ -260,7 +258,7 @@ export default function PorteClesPage() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-purple-900 via-pink-900 to-black text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="font-serif text-4xl md:text-5xl font-serif mb-6">
             Un cadeau unique et précieux
           </h2>
           <p className="text-xl text-gray-200 font-light mb-8 leading-relaxed">
@@ -270,7 +268,7 @@ export default function PorteClesPage() {
             <button className="
               px-12 py-5 
               bg-white text-black 
-              font-bold tracking-wider text-lg
+              font-serif tracking-wider text-lg
               rounded-lg 
               hover:bg-gray-100 
               transition-all
@@ -281,7 +279,7 @@ export default function PorteClesPage() {
             <button className="
               px-12 py-5 
               bg-transparent text-white border-2 border-white
-              font-bold tracking-wider text-lg
+              font-serif tracking-wider text-lg
               rounded-lg 
               hover:bg-white hover:text-black
               transition-all
@@ -292,57 +290,85 @@ export default function PorteClesPage() {
         </div>
       </section>
 
-      {/* Modal de commande */}
+      {/* Modal de commande - Style Grande Marque */}
       {showModal && selectedItem && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 flex items-center justify-center z-50 p-4"
           onClick={() => setShowModal(false)}
         >
           <div 
-            className="bg-white rounded-2xl max-w-md w-full p-8 relative"
+            className="bg-white rounded-3xl max-w-2xl w-full relative shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-gray-100"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Bouton fermer */}
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl"
+              className="absolute -top-3 -right-3 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-all z-10"
             >
-              ✕
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
 
-            {/* Image du produit */}
-            <div className="aspect-square bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 rounded-xl overflow-hidden mb-6">
-              <img 
-                src={selectedItem.image} 
-                alt={selectedItem.name}
-                className="w-full h-full object-cover"
-              />
+            <div className="p-8">
+              <div className="flex flex-col md:flex-row gap-8">
+                {/* Image du produit */}
+                <div className="md:w-1/2">
+                  <div className="aspect-square rounded-2xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
+                    <img 
+                      src={selectedItem.image} 
+                      alt={selectedItem.name}
+                      className="w-full h-full object-contain p-4"
+                    />
+                  </div>
+                </div>
+
+                {/* Détails du produit */}
+                <div className="md:w-1/2 flex flex-col justify-between">
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase tracking-[0.2em] font-semiserif mb-3">
+                      {selectedItem.category}
+                    </p>
+                    <h3 className="text-3xl font-serif text-gray-900 mb-2">{selectedItem.name}</h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      Résine époxy • Fait main • Pièce unique
+                    </p>
+                    <p className="text-4xl font-serif text-black mb-6">{selectedItem.price}</p>
+                    
+                    <div className="space-y-3 text-sm text-gray-700 mb-6">
+                      <div className="flex items-start gap-3">
+                        <span className="text-pink-600 text-lg">✓</span>
+                        <span>Résine époxy cristalline premium</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-pink-600 text-lg">✓</span>
+                        <span>Confectionné à la main avec amour</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-pink-600 text-lg">✓</span>
+                        <span>Pièce unique - Jamais identique</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-pink-600 text-lg">✓</span>
+                        <span>Livraison offerte</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <button
+                      onClick={() => window.open('https://www.instagram.com/vybe._.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}
+className="w-full px-6 md:px-8 py-3 md:py-4 bg-black text-white font-serif tracking-wider text-sm md:text-lg rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-2 md:gap-3"
+                    >
+                      <span className="text-xl">📸</span>
+                      COMMANDER SUR INSTAGRAM
+                    </button>
+                    <p className="text-center text-xs text-gray-500 mt-3">
+                      Vous serez redirigé vers notre page Instagram
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            {/* Informations du produit */}
-            <h3 className="font-serif text-3xl font-bold text-gray-900 mb-2">
-              {selectedItem.name}
-            </h3>
-            <p className="text-sm text-gray-600 mb-4">
-              Résine époxy • Fait main • Pièce unique
-            </p>
-            <div className="text-4xl font-bold text-black mb-6">
-              {selectedItem.price}€
-            </div>
-
-            {/* Texte de contact */}
-            <p className="text-gray-700 text-center mb-6 leading-relaxed">
-              Pour commander ce porte-clé unique, contactez-nous directement sur Instagram !
-            </p>
-
-            {/* Bouton Instagram */}
-            <button
-              onClick={() => window.open('https://www.instagram.com/vybe._.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}
-              className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 text-white font-bold tracking-wider text-lg rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-3"
-            >
-              <span className="text-2xl">📸</span>
-              COMMANDER SUR INSTAGRAM
-            </button>
           </div>
         </div>
       )}

@@ -79,50 +79,79 @@ export default function CreationsSection() {
       {/* Modal */}
       {selectedProduct && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 flex items-center justify-center z-50 p-4"
           onClick={() => setSelectedProduct(null)}
         >
           <div 
-            className="bg-white rounded-2xl max-w-md w-full p-8 relative"
+            className="bg-white rounded-3xl max-w-2xl w-full relative shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-gray-100"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedProduct(null)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+              className="absolute -top-3 -right-3 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-all z-10"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
-            {/* Image du produit dans le modal */}
-            <div className="aspect-square bg-gradient-to-br from-gray-50 to-white rounded-xl overflow-hidden mb-6">
-              <img 
-                src={selectedProduct.image} 
-                alt={selectedProduct.name}
-                className="w-full h-full object-cover"
-              />
+            <div className="p-8">
+              <div className="flex flex-col md:flex-row gap-8">
+                {/* Image du produit */}
+                <div className="md:w-1/2">
+                  <div className="aspect-square rounded-2xl overflow-hidden flex items-center justify-center bg-gray-50">
+                    <img 
+                      src={selectedProduct.image} 
+                      alt={selectedProduct.name}
+                      className="w-full h-full object-contain p-4"
+                    />
+                  </div>
+                </div>
+
+                {/* Détails du produit */}
+                <div className="md:w-1/2 flex flex-col justify-between">
+                  <div>
+                    <p className="text-xs text-gray-500 uppercase tracking-[0.2em] font-semibold mb-3">
+                      {selectedProduct.category}
+                    </p>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-4">{selectedProduct.name}</h3>
+                    <p className="text-4xl font-bold text-black mb-6">{selectedProduct.price}</p>
+                    
+                    <div className="space-y-3 text-sm text-gray-700 mb-6">
+                      <div className="flex items-start gap-3">
+                        <span className="text-green-600 text-lg">✓</span>
+                        <span>Sticker en vinyle haute qualité</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-green-600 text-lg">✓</span>
+                        <span>Résistant à l'eau et aux UV</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-green-600 text-lg">✓</span>
+                        <span>Adhésif repositionnable</span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-green-600 text-lg">✓</span>
+                        <span>Parfait pour personnaliser vos objets</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <button
+                      onClick={handleOrder}
+className="w-full px-6 md:px-8 py-3 md:py-4 bg-black text-white font-bold tracking-wider text-sm md:text-lg rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-2 md:gap-3"
+                    >
+                      <span className="text-xl">📸</span>
+                      COMMANDER SUR INSTAGRAM
+                    </button>
+                    <p className="text-center text-xs text-gray-500 mt-3">
+                      Vous serez redirigé vers notre page Instagram
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <div className="text-center mb-6">
-              <p className="text-sm text-gray-600 uppercase tracking-wider font-light mb-2">
-                {selectedProduct.category}
-              </p>
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">{selectedProduct.name}</h3>
-              <p className="text-4xl font-bold text-black">{selectedProduct.price}€</p>
-            </div>
-
-            <button
-              onClick={handleOrder}
-              className="w-full px-10 py-5 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 text-white font-bold tracking-wider rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-3"
-            >
-              <span className="text-2xl">📸</span>
-              COMMANDER SUR INSTAGRAM
-            </button>
-
-            <p className="text-center text-sm text-gray-500 mt-4 font-light">
-              Vous serez redirigé vers notre page Instagram
-            </p>
           </div>
         </div>
       )}
