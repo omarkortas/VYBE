@@ -16,11 +16,11 @@ export default function StickersPage() {
 
 
   const stickers = [
-    { id: 1, image: '/a21.jpg', name: 'Chat Mignon', category: 'animaux', price: '2.50' },
-    { id: 2, image: '/22.jpg', name: 'Donut Gourmand', category: 'nourriture', price: '2.50' },
-    { id: 3, image: '/23.jpg', name: 'Fleur Rose', category: 'nature', price: '2.50' },
-    { id: 4, image: '/24.jpg', name: 'Cœur Souriant', category: 'emotions', price: '2.50' },
-    { id: 5, image: '/25.jpg', name: 'Cœur Souriant', category: 'emotions', price: '2.50' },
+    { id: 1, image: '/a21.jpg', name: 'Chat Mignon', category: 'animaux', price: 'prv' },
+    { id: 2, image: '/22.jpg', name: 'Donut Gourmand', category: 'nourriture', price: 'prv' },
+    { id: 3, image: '/23.jpg', name: 'Fleur Rose', category: 'nature', price: 'prv' },
+    { id: 4, image: '/24.jpg', name: 'Cœur Souriant', category: 'emotions', price: 'prv' },
+    { id: 5, image: '/25.jpg', name: 'Cœur Souriant', category: 'emotions', price: 'prv' },
 
   ];
 
