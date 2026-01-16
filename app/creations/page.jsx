@@ -14,7 +14,7 @@ export default function CreationsSection() {
   ];
 
   const handleOrder = () => {
-    window.open('https://www.instagram.com/vybe._.wear/', '_blank');
+    window.open('https://www.instagram.com/vybe._.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank');
   };
 
   return (

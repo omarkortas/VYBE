@@ -337,7 +337,7 @@ export default function PorteClesPage() {
 
             {/* Bouton Instagram */}
             <button
-              onClick={() => window.open('https://www.instagram.com/vybe._.wear?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}
+              onClick={() => window.open('https://www.instagram.com/vybe._.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}
               className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 text-white font-bold tracking-wider text-lg rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-3"
             >
               <span className="text-2xl">📸</span>
