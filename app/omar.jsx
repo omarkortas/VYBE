@@ -22,7 +22,7 @@ omar el farouk kortas            </h1>
 
 
             <Link
-              href="/index"
+              href="/about"
               className="inline-flex items-center text-gray-900 hover:text-gray-600 transition-colors duration-300 text-lg font-medium"
             >
               Read our full story
