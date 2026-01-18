@@ -355,19 +355,19 @@ export default function PorteClesPage() {
       {/* Modal de commande - Style Grande Marque */}
       {showModal && selectedItem && (
         <div 
-          className="fixed inset-0 flex items-center justify-center z-50 p-4 bg-black bg-opacity-50"
+          className="fixed inset-0 flex items-center justify-center z-50 p-4 md:p-8 bg-black bg-opacity-50"
           onClick={() => setShowModal(false)}
         >
           <div 
-            className="bg-white rounded-3xl max-w-2xl w-full relative shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-gray-100"
+            className="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] md:max-h-[90vh] overflow-y-auto relative shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-gray-100"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setShowModal(false)}
-              className="absolute -top-3 -right-3 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-all z-10"
+              className="absolute top-4 right-4 w-10 h-10 bg-black rounded-full shadow-lg flex items-center justify-center text-white hover:bg-gray-800 transition-all z-10"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
@@ -418,16 +418,9 @@ export default function PorteClesPage() {
                       </div>
                       <div className="flex items-start gap-3">
                         <span className="text-pink-600 text-lg">✓</span>
-                        <span>Confectionné à la main avec amour</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <span className="text-pink-600 text-lg">✓</span>
                         <span>Pièce unique - Jamais identique</span>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <span className="text-pink-600 text-lg">✓</span>
-                        <span>Livraison offerte</span>
-                      </div>
+
                     </div>
                   </div>
 
