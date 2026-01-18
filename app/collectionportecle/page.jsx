@@ -61,7 +61,7 @@ export default function PorteClesPage() {
               Porte-clés
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 font-serif max-w-2xl mx-auto leading-relaxed">
-              Porte-clés artisanaux en résine précieuse, faits main avec amour
+              Porte-clés artisanaux en résine précieuse
             </p>
           </div>
         </div>
@@ -172,7 +172,7 @@ export default function PorteClesPage() {
                       {item.name}
                     </h3>
                     <p className="text-sm text-gray-600 font-light">
-                      Résine époxy • Fait main • Pièce unique
+                      Résine époxy • Pièce unique
                     </p>
                   </div>
                   
@@ -309,9 +309,6 @@ export default function PorteClesPage() {
               <h3 className="font-serif text-2xl font-serif text-gray-900 mb-3">
                 Fait avec Amour
               </h3>
-              <p className="text-gray-700 font-light leading-relaxed">
-                Confectionnés à la main avec passion et attention aux moindres détails.
-              </p>
             </div>
           </div>
         </div>
@@ -407,7 +404,7 @@ export default function PorteClesPage() {
                     </p>
                     <h3 className="text-3xl font-serif text-gray-900 mb-2">{selectedItem.name}</h3>
                     <p className="text-sm text-gray-600 mb-4">
-                      Résine époxy • Fait main • Pièce unique
+                      Résine époxy • Pièce unique
                     </p>
                     <p className="text-4xl font-serif text-black mb-6">{selectedItem.price}DT</p>
                     
