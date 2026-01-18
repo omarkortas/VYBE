@@ -14,10 +14,24 @@ export default function PorteClesPage() {
   ];
 
   const porteCles = [
-    { id: 1, image: '/12.jpg', name: 'Chat Mignon', category: 'animaux', price: 'prv' },
-    { id: 2, image: '/11.jpg', name: 'Donut Gourmand', category: 'nourriture', price: 'prv' },
-    { id: 3, image: '/13.jpg', name: 'Fleur Rose', category: 'nature', price: 'prv' },
-    { id: 4, image: '/14.jpg', name: 'Cœur Souriant', category: 'emotions', price: 'prv' },
+                        { id: 14, image: '/aa.png', name: 'solde', category: 'emotions', price: '10' },
+                { id: 13, image: '/bb.png', name: 'solde', category: 'emotions', price: '10' },
+                    { id: 11, image: '/l.png', name: 'solde', category: 'emotions', price: '8' },
+                { id: 12, image: '/k.png', name: 'solde', category: 'emotions', price: '8' },
+    { id: 1, image: '/a.png', name: 'solde', category: 'animaux', price: '7' },
+    { id: 2, image: '/b.png', name: 'solde', category: 'nourriture', price: '7' },
+    { id: 3, image: '/c.png', name: 'solde', category: 'nature', price: '8' },
+    { id: 4, image: '/d.png', name: 'solde', category: 'emotions', price: '4' },
+        { id: 5, image: '/e.png', name: 'solde', category: 'emotions', price: '8' },
+            { id: 6, image: '/f.png', name: 'solde', category: 'emotions', price: '8' },
+                { id: 7, image: '/h.png', name: 'solde', category: 'emotions', price: '4' },               
+                { id: 8, image: '/g.png', name: 'solde', category: 'emotions', price: '4' },
+                { id: 9, image: '/j.png', name: 'solde', category: 'emotions', price: '8' },
+                { id: 10, image: '/i.png', name: 'solde', category: 'emotions', price: '8' },
+                                { id: 15, image: '/n.png', name: 'solde', category: 'emotions', price: '8' },
+
+
+
   ];
 
   const filteredPorteCles = selectedCategory === 'tous' 
@@ -127,7 +141,7 @@ export default function PorteClesPage() {
                   
                   <div className="flex items-end justify-between pt-4 border-t border-gray-100">
                     <div>
-                      <span className="text-3xl font-serif text-black">{item.price}€</span>
+                      <span className="text-3xl font-serif text-black">{item.price}DT</span>
                       <p className="text-xs text-gray-500 mt-1">Livraison offerte</p>
                     </div>
                     <button className="

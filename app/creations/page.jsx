@@ -6,11 +6,11 @@ export default function CreationsSection() {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const products = [
-    { id: 1, image: '/12.jpg', name: 'Chat Mignon', category: 'animaux', price: 'prv' },
-    { id: 2, image: '/11.jpg', name: 'Donut Gourmand', category: 'nourriture', price: 'prv' },
-    { id: 3, image: '/13.jpg', name: 'Fleur Rose', category: 'nature', price: 'prv' },
-    { id: 4, image: '/24.jpg', name: 'Cœur Souriant', category: 'emotions', price: 'prv' },
-    { id: 5, image: '/25.jpg', name: 'Étoile Brillante', category: 'emotions', price: 'prv' },
+    { id: 1, image: '/aa.png', name: 'solde', category: 'animaux', price: '10' },
+    { id: 2, image: '/bb.png', name: 'solde', category: 'nourriture', price: '10' },
+    { id: 3, image: '/h.png', name: 'solde', category: 'nature', price: '4' },
+    { id: 4, image: '/24.jpg', name: 'solde', category: 'emotions', price: 'prv' },
+    { id: 5, image: '/25.jpg', name: 'solde', category: 'emotions', price: 'prv' },
   ];
 
   const handleOrder = () => {
@@ -59,11 +59,10 @@ export default function CreationsSection() {
 
               <div className="p-6">
                 <p className="text-sm text-gray-600 uppercase tracking-wider font-light mb-1">
-                  {product.category}
                 </p>
                 <h3 className="text-xl font-medium text-gray-900 mb-3">{product.name}</h3>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-black">{product.price}€</span>
+                  <span className="text-2xl font-bold text-black">{product.price}DT</span>
                   <button className="p-2.5 rounded-lg hover:bg-gray-100 transition">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
