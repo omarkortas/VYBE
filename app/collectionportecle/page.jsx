@@ -14,24 +14,24 @@ export default function PorteClesPage() {
   ];
 
   const porteCles = [
-                        { id: 14, image: '/aa.png', name: 'solde', category: 'emotions', price: '10' },
-                { id: 13, image: '/bb.png', name: 'solde', category: 'emotions', price: '10' },
-                    { id: 11, image: '/l.png', name: 'solde', category: 'emotions', price: '8' },
-                { id: 12, image: '/k.png', name: 'solde', category: 'emotions', price: '7' },
+    { id: 24, images: ['/stouch.png', '/stouch1.png'], name: 'solde', category: 'emotions', price: '12' },
+    { id: 14, image: '/aa.png', name: 'solde', category: 'emotions', price: '10' },
+    { id: 13, image: '/bb.png', name: 'solde', category: 'emotions', price: '10' },
+    { id: 11, image: '/l.png', name: 'solde', category: 'emotions', price: '8' },
+    { id: 16, image: '/cc.png', name: 'solde', category: 'emotions', price: '8' },
+    { id: 12, image: '/k.png', name: 'solde', category: 'emotions', price: '7', sold: true },
+    { id: 17, image: '/sanfour.png', name: 'solde', category: 'emotions', price: '7'},
     { id: 1, image: '/a.png', name: 'solde', category: 'animaux', price: '7' },
     { id: 2, image: '/b.png', name: 'solde', category: 'nourriture', price: '7' },
     { id: 3, image: '/c.png', name: 'solde', category: 'nature', price: '7' },
     { id: 4, image: '/d.png', name: 'solde', category: 'emotions', price: '4' },
-        { id: 5, image: '/e.png', name: 'solde', category: 'emotions', price: '8' },
-            { id: 6, image: '/f.png', name: 'solde', category: 'emotions', price: '8' },
-                { id: 7, image: '/h.png', name: 'solde', category: 'emotions', price: '4' },               
-                { id: 8, image: '/g.png', name: 'solde', category: 'emotions', price: '4' },
-                { id: 9, image: '/j.png', name: 'solde', category: 'emotions', price: '7' },
-                { id: 10, image: '/i.png', name: 'solde', category: 'emotions', price: '8' },
-                                { id: 15, image: '/n.png', name: 'solde', category: 'emotions', price: '7' },
-
-
-
+    { id: 5, image: '/e.png', name: 'solde', category: 'emotions', price: '8' },
+    { id: 6, image: '/f.png', name: 'solde', category: 'emotions', price: '8' },
+    { id: 7, image: '/h.png', name: 'solde', category: 'emotions', price: '4' },               
+    { id: 8, image: '/g.png', name: 'solde', category: 'emotions', price: '4' },
+    { id: 9, image: '/j.png', name: 'solde', category: 'emotions', price: '7' },
+    { id: 10, image: '/i.png', name: 'solde', category: 'emotions', price: '8' },
+    { id: 15, image: '/n.png', name: 'solde', category: 'emotions', price: '7' },
   ];
 
   const filteredPorteCles = selectedCategory === 'tous' 
@@ -98,11 +98,24 @@ export default function PorteClesPage() {
             {filteredPorteCles.map(item => (
               <div 
                 key={item.id}
-                className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-2xl transition-all relative"
+                className={`group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all relative ${
+                  item.price === '10' 
+                    ? 'border-2 border-pink-400 shadow-lg ring-2 ring-pink-200' 
+                    : 'border border-gray-200'
+                }`}
               >
+                {/* Badge prix premium */}
+                {item.price === '10' && (
+                  <div className="absolute top-4 right-4 z-10">
+                    <span className="bg-gradient-to-r from-pink-500 to-purple-600 text-white text-xs font-serif px-3 py-1 rounded-full tracking-wider shadow-lg">
+                      ⭐ PREMIUM
+                    </span>
+                  </div>
+                )}
+                
                 {/* Badge édition */}
                 {item.edition === 'exclusive' && (
-                  <div className="absolute top-4 right-4 z-10">
+                  <div className="absolute top-4 left-4 z-10">
                     <span className="bg-black text-white text-xs font-serif px-3 py-1 rounded-full tracking-wider">
                       EXCLUSIF
                     </span>
@@ -112,21 +125,45 @@ export default function PorteClesPage() {
                 <div 
                   className="aspect-square bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative overflow-hidden cursor-pointer"
                   onClick={() => {
-                    setSelectedItem(item);
-                    setShowModal(true);
+                    if (!item.sold) {
+                      setSelectedItem(item);
+                      setShowModal(true);
+                    }
                   }}
                 >
+                  {/* Bande "Vendu" */}
+                  {item.sold && (
+                    <div className="absolute top-8 left-0 right-0 bg-red-600 text-white text-center py-3 font-serif text-xl font-bold tracking-wider shadow-lg z-30 transform -rotate-12">
+                      VENDU
+                    </div>
+                  )}
+                  
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent to-purple-100 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                   
                   {/* Chaîne porte-clé */}
                   <div className="absolute top-8 right-12 w-1 h-16 bg-gray-300 rounded-full opacity-60 z-20"></div>
                   <div className="absolute top-6 right-11 w-4 h-4 border-2 border-gray-300 rounded-full z-20"></div>
                   
-                  <img 
-                    src={item.image} 
-                    alt={item.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                  {item.images ? (
+                    <div className="relative w-full h-full">
+                      <img 
+                        src={item.images[0]} 
+                        alt={item.name}
+                        className="absolute inset-0 w-full h-full object-contain p-4 group-hover:opacity-0 transition-opacity duration-300"
+                      />
+                      <img 
+                        src={item.images[1]} 
+                        alt={item.name}
+                        className="absolute inset-0 w-full h-full object-contain p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                  ) : (
+                    <img 
+                      src={item.image} 
+                      alt={item.name}
+                      className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                    />
+                  )}
                 </div>
                 
                 <div className="p-6 space-y-4">
@@ -144,16 +181,27 @@ export default function PorteClesPage() {
                       <span className="text-3xl font-serif text-black">{item.price}DT</span>
                       <p className="text-xs text-gray-500 mt-1">Livraison offerte</p>
                     </div>
-                    <button className="
+                    <button 
+                      onClick={() => {
+                        if (!item.sold) {
+                          setSelectedItem(item);
+                          setShowModal(true);
+                        }
+                      }}
+                      disabled={item.sold}
+                      className={`
                       px-6 py-3 
-                      bg-black text-white text-sm
+                      text-sm
                       font-medium tracking-wider 
                       rounded-lg 
-                      hover:bg-gray-800 
                       transition-all
-                      shadow-md hover:shadow-lg
-                    ">
-                      AJOUTER
+                      shadow-md
+                      ${item.sold 
+                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed' 
+                        : 'bg-black text-white hover:bg-gray-800 hover:shadow-lg'
+                      }
+                    `}>
+                      {item.sold ? 'VENDU' : 'VOIR'}
                     </button>
                   </div>
                 </div>
@@ -307,7 +355,7 @@ export default function PorteClesPage() {
       {/* Modal de commande - Style Grande Marque */}
       {showModal && selectedItem && (
         <div 
-          className="fixed inset-0 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 flex items-center justify-center z-50 p-4 bg-black bg-opacity-50"
           onClick={() => setShowModal(false)}
         >
           <div 
@@ -327,12 +375,27 @@ export default function PorteClesPage() {
               <div className="flex flex-col md:flex-row gap-8">
                 {/* Image du produit */}
                 <div className="md:w-1/2">
-                  <div className="aspect-square rounded-2xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
-                    <img 
-                      src={selectedItem.image} 
-                      alt={selectedItem.name}
-                      className="w-full h-full object-contain p-4"
-                    />
+                  <div className="aspect-square rounded-2xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative">
+                    {selectedItem.images ? (
+                      <>
+                        <img 
+                          src={selectedItem.images[0]} 
+                          alt={selectedItem.name}
+                          className="absolute inset-0 w-full h-full object-contain p-2 transition-opacity duration-300 hover:opacity-0"
+                        />
+                        <img 
+                          src={selectedItem.images[1]} 
+                          alt={selectedItem.name}
+                          className="absolute inset-0 w-full h-full object-contain p-2"
+                        />
+                      </>
+                    ) : (
+                      <img 
+                        src={selectedItem.image} 
+                        alt={selectedItem.name}
+                        className="w-full h-full object-contain p-2"
+                      />
+                    )}
                   </div>
                 </div>
 
@@ -346,7 +409,7 @@ export default function PorteClesPage() {
                     <p className="text-sm text-gray-600 mb-4">
                       Résine époxy • Fait main • Pièce unique
                     </p>
-                    <p className="text-4xl font-serif text-black mb-6">{selectedItem.price}</p>
+                    <p className="text-4xl font-serif text-black mb-6">{selectedItem.price}DT</p>
                     
                     <div className="space-y-3 text-sm text-gray-700 mb-6">
                       <div className="flex items-start gap-3">
@@ -371,7 +434,7 @@ export default function PorteClesPage() {
                   <div>
                     <button
                       onClick={() => window.open('https://www.instagram.com/vybe._.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}
-className="w-full px-6 md:px-8 py-3 md:py-4 bg-black text-white font-serif tracking-wider text-sm md:text-lg rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-2 md:gap-3"
+                      className="w-full px-6 md:px-8 py-3 md:py-4 bg-black text-white font-serif tracking-wider text-sm md:text-lg rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-2 md:gap-3"
                     >
                       <span className="text-xl">📸</span>
                       COMMANDER SUR INSTAGRAM
