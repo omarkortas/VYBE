@@ -8,19 +8,26 @@ export default function StickersPage() {
 
   const categories = [
     { id: 'tous', label: 'TOUS' },
-    { id: 'animaux', label: 'ANIMAUX' },
-    { id: 'nourriture', label: 'NOURRITURE' },
-    { id: 'nature', label: 'NATURE' },
-    { id: 'emotions', label: 'ÉMOTIONS' },
+    { id: 'choufli hal', label: 'choufli hal' },
+    { id: 'cats', label: 'cats' },
+    { id: 'anime', label: 'anime' },
+    { id: 'packs', label: 'packs' },
+        { id: 'football', label: 'football' },
+
   ];
 
   const stickers = [
-    { id: 1, image: '/choufli hal.png', name: 'Chat Mignon', category: 'animaux', price: 'prv' },
-    { id: 2, image: '/sticker1.png', name: 'Donut Gourmand', category: 'nourriture', price: 'prv' },
-        { id: 3, image: '/sticker2.png', name: 'Donut Gourmand', category: 'nourriture', price: 'prv' },
+    { id: 1, image: '/choufli hal.png', name: 'Choufli hal', category: 'choufli hal', price: 'prv' },
+    { id: 2, image: '/sticker1.png', name: 'cats', category: 'cats', price: 'prv' },
+        { id: 3, image: '/sticker2.png', name: 'troll', category: 'troll', price: 'prv' },
 
-    { id: 4, image: '/stick.png', name: 'Cœur Souriant', category: 'emotions', price: 'prv' },
-    { id: 5, image: '/25.jpg', name: 'Cœur Souriant', category: 'emotions', price: 'prv' },
+    { id: 4, image: '/sticker3.jpg', name: 'tom & jerry', category: 'anime', price: 'prv' },
+        { id: 5, image: '/sticker4.jpg', name: 'avengers', category: 'anime', price: 'prv' },
+        { id: 6, image: '/sticker5.jpg', name: 'real', category: 'football', price: 'prv' },
+    { id: 7, image: '/sticker6.jpg', name: 'barca', category: 'football', price: 'prv' },
+        { id: 8, image: '/sticker7.jpg', name: 'anime', category: 'anime', price: 'prv' },
+
+    { id: 54, image: '/25.jpg', name: 'anime', category: 'anime', price: 'prv' },
   ];
 
   const filteredStickers = selectedCategory === 'tous' 
@@ -108,7 +115,7 @@ export default function StickersPage() {
                     {sticker.name}
                   </h3>
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-xl md:text-2xl font-serif text-black">{sticker.price}€</span>
+                    <span className="text-xl md:text-2xl font-serif text-black">{sticker.price} DT</span>
                     <button className="
                       px-4 md:px-6 py-2 
                       bg-black text-white text-xs md:text-sm
