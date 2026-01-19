@@ -7,31 +7,33 @@ export default function PorteClesPage() {
   const [showModal, setShowModal] = useState(false);
   const categories = [
     { id: 'tous', label: 'TOUS' },
-    { id: 'gourmandises', label: 'GOURMANDISES' },
-    { id: 'kawaii', label: 'KAWAII' },
-    { id: 'fleurs', label: 'FLEURS' },
-    { id: 'fantaisie', label: 'FANTAISIE' },
+    { id: 'anime', label: 'anime' },
+    { id: 'labubu', label: 'labubu' },
+    { id: 'games', label: 'games' },
+      { id: 'animaux', label: 'animaux' },
+
+    { id: 'trousse', label: 'trousse' },
   ];
 
   const porteCles = [
-    { id: 24, images: ['/stouch.png', '/stouch1.png'], name: 'solde', category: 'emotions', price: '12' },
-    { id: 14, image: '/aa.png', name: 'solde', category: 'emotions', price: '10' },
-    { id: 13, image: '/bb.png', name: 'solde', category: 'emotions', price: '10' },
-    { id: 11, image: '/l.png', name: 'solde', category: 'emotions', price: '8' },
-    { id: 16, image: '/cc.png', name: 'solde', category: 'emotions', price: '8' },
-        { id: 10, image: '/i.png', name: 'solde', category: 'emotions', price: '8', sold: true },
-    { id: 12, image: '/k.png', name: 'solde', category: 'emotions', price: '7', sold: true },
-    { id: 17, image: '/sanfour.png', name: 'solde', category: 'emotions', price: '7'},
-    { id: 1, image: '/a.png', name: 'solde', category: 'animaux', price: '7' },
-    { id: 2, image: '/b.png', name: 'solde', category: 'nourriture', price: '7' },
-    { id: 3, image: '/c.png', name: 'solde', category: 'nature', price: '7' },
-    { id: 4, image: '/d.png', name: 'solde', category: 'emotions', price: '4' },
-    { id: 5, image: '/e.png', name: 'solde', category: 'emotions', price: '8' },
-    { id: 6, image: '/f.png', name: 'solde', category: 'emotions', price: '8' },
-    { id: 7, image: '/h.png', name: 'solde', category: 'emotions', price: '4' },               
-    { id: 8, image: '/g.png', name: 'solde', category: 'emotions', price: '4' },
-    { id: 9, image: '/j.png', name: 'solde', category: 'emotions', price: '7' },
-    { id: 15, image: '/n.png', name: 'solde', category: 'emotions', price: '7' },
+    { id: 24, images: ['/stouch.png', '/stouch1.png'], name: 'solde', category: 'trousse', price: '12' },
+    { id: 14, image: '/aa.png', name: 'solde', category: 'anime', price: '10' },
+    { id: 13, image: '/bb.png', name: 'solde', category: 'anime', price: '10' },
+    { id: 11, image: '/l.png', name: 'solde', category: 'anime', price: '8' },
+    { id: 16, image: '/cc.png', name: 'solde', category: 'anime', price: '8' },
+        { id: 10, image: '/i.png', name: 'solde', category: 'anime', price: '8', sold: true },
+    { id: 12, image: '/k.png', name: 'solde', category: 'anime', price: '7', sold: true },
+    { id: 17, image: '/sanfour.png', name: 'solde', category: 'anime', price: '7'},
+    { id: 1, image: '/a.png', name: 'solde', category: 'labubu', price: '7' },
+    { id: 2, image: '/b.png', name: 'solde', category: 'animaux', price: '7' },
+    { id: 3, image: '/c.png', name: 'solde', category: 'animaux', price: '7' },
+    { id: 4, image: '/d.png', name: 'solde', category: 'anime', price: '4' },
+    { id: 5, image: '/e.png', name: 'solde', category: 'labubu', price: '8' },
+    { id: 6, image: '/f.png', name: 'solde', category: 'labubu', price: '8' },
+    { id: 7, image: '/h.png', name: 'solde', category: 'games', price: '4' },               
+    { id: 8, image: '/g.png', name: 'solde', category: 'games', price: '4', sold: true  },
+    { id: 9, image: '/j.png', name: 'solde', category: 'labubu', price: '7' },
+    { id: 15, image: '/n.png', name: 'solde', category: 'animaux', price: '7' },
   ];
 
   const filteredPorteCles = selectedCategory === 'tous' 
@@ -352,7 +354,7 @@ export default function PorteClesPage() {
       {/* Modal de commande - Style Grande Marque */}
       {showModal && selectedItem && (
         <div 
-          className="fixed inset-0 flex items-center justify-center z-50 p-4 md:p-8 bg-black bg-opacity-50"
+          className="fixed inset-0 flex items-center justify-center z-50 p-4 md:p-8"
           onClick={() => setShowModal(false)}
         >
           <div 

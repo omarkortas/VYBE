@@ -12,21 +12,18 @@ export default function StickersPage() {
     { id: 'cats', label: 'cats' },
     { id: 'anime', label: 'anime' },
     { id: 'packs', label: 'packs' },
-        { id: 'football', label: 'football' },
-
+    { id: 'football', label: 'football' },
   ];
 
   const stickers = [
     { id: 1, image: '/choufli hal.png', name: 'Choufli hal', category: 'choufli hal', price: 'prv' },
     { id: 2, image: '/sticker1.png', name: 'cats', category: 'cats', price: 'prv' },
-        { id: 3, image: '/sticker2.png', name: 'troll', category: 'troll', price: 'prv' },
-
-    { id: 4, image: '/sticker3.jpg', name: 'tom & jerry', category: 'anime', price: 'prv' },
-        { id: 5, image: '/sticker4.jpg', name: 'avengers', category: 'anime', price: 'prv' },
-        { id: 6, image: '/sticker5.jpg', name: 'real', category: 'football', price: 'prv' },
-    { id: 7, image: '/sticker6.jpg', name: 'barca', category: 'football', price: 'prv' },
-        { id: 8, image: '/sticker7.jpg', name: 'anime', category: 'anime', price: 'prv' },
-
+    { id: 3, image: '/sticker2.png', name: 'troll', category: 'troll', price: 'prv' },
+    // { id: 4, image: '/sticker3.jpg', name: 'tom & jerry', category: 'anime', price: 'prv' },
+    // { id: 5, image: '/sticker4.jpg', name: 'avengers', category: 'anime', price: 'prv' },
+    // { id: 6, image: '/sticker5.jpg', name: 'real', category: 'football', price: 'prv' },
+    // { id: 7, image: '/sticker6.jpg', name: 'barca', category: 'football', price: 'prv' },
+    // { id: 8, image: '/sticker7.jpg', name: 'anime', category: 'anime', price: 'prv' },
     { id: 54, image: '/25.jpg', name: 'anime', category: 'anime', price: 'prv' },
   ];
 
@@ -94,13 +91,28 @@ export default function StickersPage() {
             {filteredStickers.map(sticker => (
               <div 
                 key={sticker.id}
-                className="group bg-white rounded-xl md:rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all cursor-pointer"
-                onClick={() => {
-                  setSelectedItem(sticker);
-                  setShowModal(true);
-                }}
+                className={`group bg-white rounded-xl md:rounded-2xl overflow-hidden hover:shadow-xl transition-all relative ${
+                  sticker.id === 1 
+                    ? 'border-2 border-green-400 shadow-lg ring-2 ring-green-200' 
+                    : 'border border-gray-200'
+                }`}
               >
-                <div className="aspect-square bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+                {/* Badge NEW pour l'élément spécial */}
+                {sticker.id === 1 && (
+                  <div className="absolute top-4 right-4 z-10">
+                    <span className="bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs font-serif px-3 py-1 rounded-full tracking-wider shadow-lg animate-pulse">
+                      ✨ NEW
+                    </span>
+                  </div>
+                )}
+                
+                <div 
+                  className="aspect-square bg-gradient-to-br from-gray-50 to-white relative overflow-hidden cursor-pointer"
+                  onClick={() => {
+                    setSelectedItem(sticker);
+                    setShowModal(true);
+                  }}
+                >
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-100 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                   
                   <img 
@@ -115,16 +127,22 @@ export default function StickersPage() {
                     {sticker.name}
                   </h3>
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-xl md:text-2xl font-serif text-black">{sticker.price} DT</span>
-                    <button className="
-                      px-4 md:px-6 py-2 
-                      bg-black text-white text-xs md:text-sm
-                      font-serif tracking-wider 
-                      rounded-lg 
-                      hover:bg-gray-800 
-                      transition-all
-                    ">
-                      AJOUTER
+                    <span className="text-xl md:text-2xl font-serif text-black">{sticker.price}</span>
+                    <button 
+                      onClick={() => {
+                        setSelectedItem(sticker);
+                        setShowModal(true);
+                      }}
+                      className="
+                        px-4 md:px-6 py-2 
+                        bg-black text-white text-xs md:text-sm
+                        font-serif tracking-wider 
+                        rounded-lg 
+                        hover:bg-gray-800 
+                        transition-all
+                      "
+                    >
+                      VOIR
                     </button>
                   </div>
                 </div>
@@ -200,22 +218,22 @@ export default function StickersPage() {
         </div>
       </section>
 
-      {/* Modal de commande - Style Grande Marque */}
+      {/* Modal de commande - Style identique aux porte-clés */}
       {showModal && selectedItem && (
         <div 
-          className="fixed inset-0 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 flex items-center justify-center z-50 p-4 md:p-8"
           onClick={() => setShowModal(false)}
         >
           <div 
-            className="bg-white rounded-3xl max-w-2xl w-full relative shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-gray-100"
+            className="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] md:max-h-[90vh] overflow-y-auto relative shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-gray-100"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setShowModal(false)}
-              className="absolute -top-3 -right-3 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-all z-10"
+              className="absolute top-4 right-4 w-10 h-10 bg-black rounded-full shadow-lg flex items-center justify-center text-white hover:bg-gray-800 transition-all z-10"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
@@ -223,7 +241,7 @@ export default function StickersPage() {
               <div className="flex flex-col md:flex-row gap-8">
                 {/* Image du produit */}
                 <div className="md:w-1/2">
-                  <div className="aspect-square rounded-2xl overflow-hidden flex items-center justify-center bg-gray-50">
+                  <div className="aspect-square rounded-2xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-gray-50 to-white relative">
                     <img 
                       src={selectedItem.image} 
                       alt={selectedItem.name}
@@ -238,25 +256,24 @@ export default function StickersPage() {
                     <p className="text-xs text-gray-500 uppercase tracking-[0.2em] font-semiserif mb-3">
                       {selectedItem.category}
                     </p>
-                    <h3 className="text-3xl font-serif text-gray-900 mb-4">{selectedItem.name}</h3>
+                    <h3 className="text-3xl font-serif text-gray-900 mb-2">{selectedItem.name}</h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      Sticker vinyle premium
+                    </p>
                     <p className="text-4xl font-serif text-black mb-6">{selectedItem.price}</p>
                     
                     <div className="space-y-3 text-sm text-gray-700 mb-6">
                       <div className="flex items-start gap-3">
-                        <span className="text-green-600 text-lg">✓</span>
-                        <span>Sticker en vinyle haute qualité</span>
+                        <span className="text-pink-600 text-lg">✓</span>
+                        <span>Vinyle haute qualité</span>
                       </div>
                       <div className="flex items-start gap-3">
-                        <span className="text-green-600 text-lg">✓</span>
+                        <span className="text-pink-600 text-lg">✓</span>
                         <span>Résistant à l'eau et aux UV</span>
                       </div>
                       <div className="flex items-start gap-3">
-                        <span className="text-green-600 text-lg">✓</span>
+                        <span className="text-pink-600 text-lg">✓</span>
                         <span>Adhésif repositionnable</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <span className="text-green-600 text-lg">✓</span>
-                        <span>Parfait pour personnaliser vos objets</span>
                       </div>
                     </div>
                   </div>
@@ -264,7 +281,7 @@ export default function StickersPage() {
                   <div>
                     <button
                       onClick={() => window.open('https://www.instagram.com/vybe._.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}
-className="w-full px-6 md:px-8 py-3 md:py-4 bg-black text-white font-serif tracking-wider text-sm md:text-lg rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-2 md:gap-3"
+                      className="w-full px-6 md:px-8 py-3 md:py-4 bg-black text-white font-serif tracking-wider text-sm md:text-lg rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-2 md:gap-3"
                     >
                       <span className="text-xl">📸</span>
                       COMMANDER SUR INSTAGRAM
