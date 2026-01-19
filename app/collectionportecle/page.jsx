@@ -19,6 +19,7 @@ export default function PorteClesPage() {
     { id: 13, image: '/bb.png', name: 'solde', category: 'emotions', price: '10' },
     { id: 11, image: '/l.png', name: 'solde', category: 'emotions', price: '8' },
     { id: 16, image: '/cc.png', name: 'solde', category: 'emotions', price: '8' },
+        { id: 10, image: '/i.png', name: 'solde', category: 'emotions', price: '8', sold: true },
     { id: 12, image: '/k.png', name: 'solde', category: 'emotions', price: '7', sold: true },
     { id: 17, image: '/sanfour.png', name: 'solde', category: 'emotions', price: '7'},
     { id: 1, image: '/a.png', name: 'solde', category: 'animaux', price: '7' },
@@ -30,7 +31,6 @@ export default function PorteClesPage() {
     { id: 7, image: '/h.png', name: 'solde', category: 'emotions', price: '4' },               
     { id: 8, image: '/g.png', name: 'solde', category: 'emotions', price: '4' },
     { id: 9, image: '/j.png', name: 'solde', category: 'emotions', price: '7' },
-    { id: 10, image: '/i.png', name: 'solde', category: 'emotions', price: '8' },
     { id: 15, image: '/n.png', name: 'solde', category: 'emotions', price: '7' },
   ];
 
