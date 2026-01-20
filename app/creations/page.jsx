@@ -9,8 +9,8 @@ export default function CreationsSection() {
     { id: 1, image: '/aa.png', name: 'solde', category: 'animaux', price: '10' },
     { id: 2, image: '/bb.png', name: 'solde', category: 'nourriture', price: '10' },
     { id: 3, image: '/h.png', name: 'solde', category: 'nature', price: '4' },
-    { id: 4, image: '/24.jpg', name: 'solde', category: 'emotions', price: 'prv' },
-    { id: 5, image: '/25.jpg', name: 'solde', category: 'emotions', price: 'prv' },
+    { id: 4, image: '/sticker1.png', name: 'cats', category: 'cats', price: '3.500' },
+    { id: 5, image: '/sticker2.png', name: 'troll', category: 'troll', price: '3.500' },
   ];
 
   const handleOrder = () => {
