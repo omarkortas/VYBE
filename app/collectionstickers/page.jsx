@@ -16,10 +16,10 @@ export default function StickersPage() {
   ];
 
   const stickers = [
-    { id: 1, image: '/choufli hal.png', name: 'Choufli hal', category: 'choufli hal', price: '2500' },
-      { id: 1, image: '/choufli hal 2.png', name: 'Choufli hal 2', category: 'choufli hal', price: '2500' },
-    { id: 2, image: '/sticker1.png', name: 'cats', category: 'cats', price: '3000' },
-    { id: 3, image: '/sticker2.png', name: 'troll', category: 'troll', price: '3000' },
+    { id: 1, image: '/choufli hal.png', name: 'Choufli hal', category: 'choufli hal', price: '3500' },
+      { id: 1, image: '/choufli hal 2.png', name: 'Choufli hal 2', category: 'choufli hal', price: '3500' },
+    { id: 2, image: '/sticker1.png', name: 'cats', category: 'cats', price: '3500' },
+    { id: 3, image: '/sticker2.png', name: 'troll', category: 'troll', price: '3500' },
     // { id: 4, image: '/sticker3.jpg', name: 'tom & jerry', category: 'anime', price: 'prv' },
     // { id: 5, image: '/sticker4.jpg', name: 'avengers', category: 'anime', price: 'prv' },
     // { id: 6, image: '/sticker5.jpg', name: 'real', category: 'football', price: 'prv' },
@@ -128,7 +128,7 @@ export default function StickersPage() {
                     {sticker.name}
                   </h3>
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-xl md:text-2xl font-serif text-black">{sticker.price}</span>
+                    <span className="text-xl md:text-2xl font-serif text-black">{sticker.price} DT</span>
                     <button 
                       onClick={() => {
                         setSelectedItem(sticker);
