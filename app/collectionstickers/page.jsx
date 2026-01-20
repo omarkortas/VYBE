@@ -17,7 +17,7 @@ export default function StickersPage() {
 
   const stickers = [
     { id: 1, image: '/choufli hal.png', name: 'Choufli hal', category: 'choufli hal', price: 'prv' },
-      { id: 1, image: '/choufli hal.png', name: 'Choufli hal 2', category: 'choufli hal', price: 'prv' },
+      { id: 1, image: '/choufli hal 2.png', name: 'Choufli hal 2', category: 'choufli hal', price: 'prv' },
     { id: 2, image: '/sticker1.png', name: 'cats', category: 'cats', price: 'prv' },
     { id: 3, image: '/sticker2.png', name: 'troll', category: 'troll', price: 'prv' },
     // { id: 4, image: '/sticker3.jpg', name: 'tom & jerry', category: 'anime', price: 'prv' },
