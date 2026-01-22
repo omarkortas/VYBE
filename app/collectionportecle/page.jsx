@@ -207,7 +207,7 @@ export default function PorteClesPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm tracking-widest text-gray-500 mb-2">NOTRE SAVOIR-FAIRE</p>
-            <h2 className="text-4xl md:text-5xl font-serif mb-4">Création artisanale</h2>
+            <h2 className="text-4xl md:text-5xl font-serif mb-4 text-black">Création artisanale</h2>
             <p className="text-gray-600 text-lg">Chaque porte-clé est une œuvre d'art miniature, créée avec passion</p>
           </div>
 
