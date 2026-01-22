@@ -142,25 +142,25 @@ export default function CreationsSection() {
       {/* Modal */}
       {selectedProduct && (
         <div 
-          className="fixed inset-0 flex items-center justify-center z-50 p-4 bg-black/60 backdrop-blur-sm"
+          className="fixed inset-0 flex items-end md:items-center justify-center z-50 md:p-4 bg-black/60 backdrop-blur-sm"
           onClick={() => setSelectedProduct(null)}
         >
           <div 
-            className="bg-white rounded-3xl max-w-3xl w-full relative shadow-2xl"
+            className="bg-white rounded-t-3xl md:rounded-3xl max-w-3xl w-full relative shadow-2xl max-h-[95vh] md:max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedProduct(null)}
-              className="absolute -top-3 -right-3 w-12 h-12 bg-black rounded-full shadow-xl flex items-center justify-center text-white hover:bg-gray-800 transition-all z-10"
+              className="absolute top-4 right-4 md:-top-3 md:-right-3 w-10 h-10 md:w-12 md:h-12 bg-black rounded-full shadow-xl flex items-center justify-center text-white hover:bg-gray-800 transition-all z-10 text-lg md:text-xl"
             >
               ✕
             </button>
 
-            <div className="grid md:grid-cols-2 gap-0">
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-0">
               {/* Image du produit */}
               <div className="relative bg-gray-100">
                 {selectedProduct.images ? (
-                  <div className="grid grid-rows-2 h-full">
+                  <div className="grid grid-cols-2 md:grid-rows-2 md:grid-cols-1 h-64 md:h-full">
                     <img 
                       src={selectedProduct.images[0]} 
                       alt={selectedProduct.name}
@@ -176,40 +176,40 @@ export default function CreationsSection() {
                   <img 
                     src={selectedProduct.image} 
                     alt={selectedProduct.name}
-                    className="w-full h-full object-contain bg-gray-50 min-h-[500px]"
+                    className="w-full h-64 md:h-full object-contain bg-gray-50 md:min-h-[500px]"
                   />
                 )}
               </div>
 
               {/* Détails du produit */}
-              <div className="p-8 flex flex-col justify-center space-y-6">
+              <div className="p-6 md:p-8 flex flex-col justify-center space-y-4 md:space-y-6">
                 <div>
-                  <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">{selectedProduct.category}</p>
-                  <h2 className="text-3xl font-serif mb-2 text-green-600">{selectedProduct.name}</h2>
-                  <p className="text-gray-800">Résine époxy • Pièce unique</p>
+                  <p className="text-xs md:text-sm text-gray-500 uppercase tracking-widest mb-2">{selectedProduct.category}</p>
+                  <h2 className="text-2xl md:text-3xl font-serif mb-2 text-green-600">{selectedProduct.name}</h2>
+                  <p className="text-sm md:text-base text-gray-800">Résine époxy • Pièce unique</p>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 md:gap-3">
                   {selectedProduct.originalPrice && (
-                    <p className="text-gray-400 line-through text-xl">{selectedProduct.originalPrice}DT</p>
+                    <p className="text-gray-400 line-through text-lg md:text-xl">{selectedProduct.originalPrice}DT</p>
                   )}
-                  <p className="text-4xl font-bold text-black">{selectedProduct.price}DT</p>
+                  <p className="text-3xl md:text-4xl font-bold text-black">{selectedProduct.price}DT</p>
                   {selectedProduct.discount && (
-                    <span className="bg-red-600 text-white px-2 py-1 rounded text-sm font-bold">
+                    <span className="bg-red-600 text-white px-2 py-1 rounded text-xs md:text-sm font-bold">
                       -{selectedProduct.discount}%
                     </span>
                   )}
                 </div>
 
-                <div className="bg-gray-50 rounded-lg p-4 space-y-2">
-                  <p className="text-sm text-gray-700">✓ Résine époxy cristalline premium</p>
-                  <p className="text-sm text-gray-700">✓ Pièce unique - Jamais identique</p>
-                  <p className="text-sm text-gray-700">✓ Livraison offerte</p>
+                <div className="bg-gray-50 rounded-lg p-3 md:p-4 space-y-2">
+                  <p className="text-xs md:text-sm text-gray-700">✓ Résine époxy cristalline premium</p>
+                  <p className="text-xs md:text-sm text-gray-700">✓ Pièce unique - Jamais identique</p>
+                  <p className="text-xs md:text-sm text-gray-700">✓ Livraison offerte</p>
                 </div>
 
                 <button
                   onClick={handleOrder}
-                  className="w-full px-8 py-4 bg-black text-white font-serif tracking-wider text-lg rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-3"
+                  className="w-full px-6 md:px-8 py-3 md:py-4 bg-black text-white font-serif tracking-wider text-base md:text-lg rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-2 md:gap-3"
                 >
                   📸 COMMANDER SUR INSTAGRAM
                 </button>

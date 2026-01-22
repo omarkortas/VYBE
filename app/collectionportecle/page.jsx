@@ -237,28 +237,28 @@ export default function PorteClesPage() {
         </div>
       </div>
 
-      {/* Modal de commande - Style Grande Marque */}
+{/* Modal de commande - Style Grande Marque */}
       {showModal && selectedItem && (
         <div 
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end md:items-center justify-center md:p-4"
           onClick={() => setShowModal(false)}
         >
           <div 
-            className="bg-white rounded-2xl max-w-3xl w-full shadow-2xl relative overflow-hidden"
+            className="bg-white rounded-t-3xl md:rounded-2xl max-w-3xl w-full shadow-2xl relative overflow-hidden max-h-[95vh] md:max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 w-12 h-12 bg-black rounded-full shadow-xl flex items-center justify-center text-white hover:bg-gray-800 transition-all z-50 text-xl"
+              className="absolute top-4 right-4 w-10 h-10 md:w-12 md:h-12 bg-black rounded-full shadow-xl flex items-center justify-center text-white hover:bg-gray-800 transition-all z-50 text-lg md:text-xl"
             >
               ✕
             </button>
 
-            <div className="grid md:grid-cols-2 gap-0">
-              {/* Image du produit - Gauche */}
+            <div className="flex flex-col md:grid md:grid-cols-2 gap-0">
+              {/* Image du produit */}
               <div className="relative bg-gray-100">
                 {selectedItem.images ? (
-                  <div className="grid grid-rows-2 h-full">
+                  <div className="grid grid-cols-2 md:grid-rows-2 md:grid-cols-1 h-64 md:h-full">
                     <img 
                       src={selectedItem.images[0]} 
                       alt={selectedItem.name}
@@ -274,40 +274,40 @@ export default function PorteClesPage() {
                   <img 
                     src={selectedItem.image} 
                     alt={selectedItem.name}
-                    className="w-full h-full object-contain bg-gray-50 min-h-[500px]"
+                    className="w-full h-64 md:h-full object-contain bg-gray-50 md:min-h-[500px]"
                   />
                 )}
               </div>
 
-              {/* Détails du produit - Droite */}
-              <div className="p-8 flex flex-col justify-center space-y-6">
+              {/* Détails du produit */}
+              <div className="p-6 md:p-8 flex flex-col justify-center space-y-4 md:space-y-6">
                 <div>
-                  <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">{selectedItem.category}</p>
-                  <h2 className="text-3xl font-serif mb-2 text-red-600">{selectedItem.name}</h2>
-                  <p className="text-gray-600">Résine époxy • Pièce unique</p>
+                  <p className="text-xs md:text-sm text-gray-500 uppercase tracking-widest mb-2">{selectedItem.category}</p>
+                  <h2 className="text-2xl md:text-3xl font-serif mb-2 text-red-600">{selectedItem.name}</h2>
+                  <p className="text-sm md:text-base text-gray-600">Résine époxy • Pièce unique</p>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 md:gap-3">
                   {selectedItem.originalPrice && (
-                    <p className="text-gray-400 line-through text-xl">{selectedItem.originalPrice}DT</p>
+                    <p className="text-gray-400 line-through text-lg md:text-xl">{selectedItem.originalPrice}DT</p>
                   )}
-                  <p className="text-4xl font-bold text-black">{selectedItem.price}DT</p>
+                  <p className="text-3xl md:text-4xl font-bold text-black">{selectedItem.price}DT</p>
                   {selectedItem.discount && (
-                    <span className="bg-red-600 text-white px-2 py-1 rounded text-sm font-bold">
+                    <span className="bg-red-600 text-white px-2 py-1 rounded text-xs md:text-sm font-bold">
                       -{selectedItem.discount}%
                     </span>
                   )}
                 </div>
 
-                <div className="bg-gray-50 rounded-lg p-4 space-y-2">
-                  <p className="text-sm text-gray-700">✓ Résine époxy cristalline premium</p>
-                  <p className="text-sm text-gray-700">✓ Pièce unique - Jamais identique</p>
-                  <p className="text-sm text-gray-700">✓ Livraison offerte bientôt</p>
+                <div className="bg-gray-50 rounded-lg p-3 md:p-4 space-y-2">
+                  <p className="text-xs md:text-sm text-gray-700">✓ Résine époxy cristalline premium</p>
+                  <p className="text-xs md:text-sm text-gray-700">✓ Pièce unique - Jamais identique</p>
+                  <p className="text-xs md:text-sm text-gray-700">✓ Livraison offerte bientôt</p>
                 </div>
 
                 <button
                   onClick={() => window.open('https://www.instagram.com/vybe._.official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}
-                  className="w-full px-8 py-4 bg-black text-white font-serif tracking-wider text-lg rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-3"
+                  className="w-full px-6 md:px-8 py-3 md:py-4 bg-black text-white font-serif tracking-wider text-base md:text-lg rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-2 md:gap-3"
                 >
                   📸 COMMANDER SUR INSTAGRAM
                 </button>
