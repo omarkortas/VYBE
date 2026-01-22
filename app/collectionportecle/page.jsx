@@ -62,7 +62,15 @@ export default function PorteClesPage() {
       </div>
 
       {/* Filters */}
-      <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-gray-200 py-6 px-4">
+<div className="
+  relative 
+  lg:sticky lg:top-0 
+  z-20 
+  bg-white/80 backdrop-blur-md 
+  border-b border-gray-200 
+  py-4 lg:py-6 
+  px-4
+">
         <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-3">
           {categories.map(cat => (
             <button
