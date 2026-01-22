@@ -132,7 +132,7 @@ export default function StickersPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm tracking-widest text-gray-500 mb-2">NOTRE SAVOIR-FAIRE</p>
-            <h2 className="text-4xl md:text-5xl font-serif mb-4">Production de qualité</h2>
+            <h2 className="text-4xl md:text-5xl font-serif mb-4 text-black">Production de qualité</h2>
             <p className="text-gray-600 text-lg">Chaque sticker est créé avec soin pour une qualité optimale</p>
           </div>
 
