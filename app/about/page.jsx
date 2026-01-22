@@ -58,7 +58,7 @@ export default function AboutPage() {
             {/* Bouton Contact - Bien visible sur mobile */}
             <div className="flex justify-center lg:justify-start">
               <a 
-                href="#contact" 
+                href="/contact" 
                 className="
                   inline-block
                   px-6 sm:px-8 
