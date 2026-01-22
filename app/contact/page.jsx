@@ -55,9 +55,8 @@ export default function ContactPage() {
               </button>
             </div>
           </div>
-
-          {/* Colonne droite : QR CODE stylé */}
-          <div className="relative mx-auto lg:mx-0 max-w-[260px] sm:max-w-[320px] lg:max-w-md order-first lg:order-last lg:translate-x-16 lg:-translate-y-4">
+{/* Colonne droite : QR CODE stylé */}
+          <div className="relative mx-auto lg:mx-0 max-w-[260px] sm:max-w-[320px] lg:max-w-md lg:translate-x-16 lg:-translate-y-4 order-2">
             <div className="
               aspect-square           /* on force un format carré pour le QR */
               rounded-3xl 

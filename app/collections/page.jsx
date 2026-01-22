@@ -5,7 +5,7 @@ export default function CollectionsSection() {
     <section className="py-6 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Titre principal */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <div className="inline-block mb-4">
             <span className="font-serif text-gray-600 tracking-[0.4em] uppercase text-sm md:text-base font-serif">
               NOS UNIVERS

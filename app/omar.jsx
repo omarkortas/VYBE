@@ -10,8 +10,8 @@ export default function Omar() {
           
           {/* 1. Texte à gauche */}
           <div className="order-2 lg:order-1 space-y-10">
-            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-light tracking-wider text-gray-900 leading-tight">
-omar el farouk kortas            </h1>
+            <h1 className="text-3xl lg:text-4xl xl:text-5xl font-serif tracking-wider text-gray-900 leading-tight">
+Omar El Farouk Kortas            </h1>
 <p className="text-base lg:text-lg text-gray-600 leading-relaxed max-w-lg text-justify">
   My name is Omar, a passionate creator who sees beauty not only in aesthetics, 
   but in structure, balance, and intention.  
@@ -23,7 +23,7 @@ omar el farouk kortas            </h1>
 
             <Link
               href="/about"
-              className="inline-flex items-center text-gray-900 hover:text-gray-600 transition-colors duration-300 text-lg font-medium"
+              className="inline-flex items-center text-gray-900 hover:text-gray-600 transition-colors duration-300 text-lg font-serif"
             >
               Read our full story
               <svg className="ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
