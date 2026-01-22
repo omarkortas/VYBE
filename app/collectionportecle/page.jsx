@@ -17,7 +17,7 @@ export default function PorteClesPage() {
   ];
 
   const porteCles = [
-    { id: 24, images: ['/stouch.png', '/stouch1.png'], name: 'En stock', category: 'trousse', price: '10', originalPrice: '12', discount: '17' },
+    { id: 24, images: ['/stouch.png', '/stouch1.png'], name: 'En stock', category: 'trousse', price: '10', originalPrice: '12', discount: '17', sold: true  },
     { id: 14, image: '/aa.png', name: 'En stock', category: 'anime', price: '10', edition: 'exclusive' },
     { id: 13, image: '/bb.png', name: 'En stock', category: 'anime', price: '10', edition: 'exclusive' },
     { id: 11, image: '/l.png', name: 'Rupture de stock', category: 'anime', price: '8', sold: true },
