@@ -4,7 +4,8 @@ export default function ContactPage() {
       relative 
       -mt-16 lg:-mt-20        /* ajuste selon la hauteur exacte de ta navbar fixe */
       pt-4 lg:pt-6 
-      pb-16 
+    pb-6 lg:pb-8
+
       bg-white 
       overflow-hidden 
       min-h-screen 
@@ -94,7 +95,7 @@ export default function ContactPage() {
       </div>
 
       {/* Section informations supplémentaires (inchangée) */}
-      <div className="absolute bottom-8 left-0 right-0">
+      <div className="absolute bottom-2 left-0 right-0">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="text-sm text-gray-500 font-light">
             Scannez le QR code ou suivez-moi sur Instagram pour découvrir mes dernières créations
