@@ -54,7 +54,7 @@ export default function CollectionsSection() {
 
                 <div className="grid grid-cols-2 gap-4 mt-6 pt-4 border-t border-gray-200">
                   <div>
-                    <div className="text-2xl md:text-3xl font-serif text-black">200+</div>
+                    <div className="text-2xl md:text-3xl font-serif text-black">20+</div>
                     <p className="mt-1 text-sm text-gray-600 font-serif">PIÈCES</p>
                   </div>
                   <div>
@@ -113,7 +113,7 @@ export default function CollectionsSection() {
 
                 <div className="grid grid-cols-2 gap-4 mt-6 pt-4 border-t border-gray-200">
                   <div>
-                    <div className="text-2xl md:text-3xl font-serif text-black">250+</div>
+                    <div className="text-2xl md:text-3xl font-serif text-black">25+</div>
                     <p className="mt-1 text-sm text-gray-600 font-serif">MODÈLES</p>
                   </div>
                   <div>

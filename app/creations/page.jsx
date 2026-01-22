@@ -1,4 +1,3 @@
-// components/CreationsSection.tsx
 'use client';
 import { useState } from 'react';
 
@@ -6,11 +5,38 @@ export default function CreationsSection() {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const products = [
-    { id: 1, image: '/aa.png', name: 'solde', category: 'animaux', price: '10' },
-    { id: 2, image: '/bb.png', name: 'solde', category: 'nourriture', price: '10' },
-    { id: 3, image: '/h.png', name: 'solde', category: 'nature', price: '4' },
-    { id: 4, image: '/sticker1.png', name: 'cats', category: 'cats', price: '3.500' },
-    { id: 5, image: '/sticker2.png', name: 'troll', category: 'troll', price: '3.500' },
+    { 
+      id: 1, 
+      images: ['/stouch.png', '/stouch1.png'], 
+      name: 'En stock', 
+      category: 'trousse', 
+      price: '10', 
+      originalPrice: '12', 
+      discount: '17',
+      badge: 'PROMO'
+    },
+    { 
+      id: 2, 
+      image: '/aa.png', 
+      name: 'En stock', 
+      category: 'anime', 
+      price: '10',
+      badge: 'PREMIUM',
+      edition: 'exclusive'
+    },
+    { 
+      id: 3, 
+      image: '/bb.png', 
+      name: 'En stock', 
+      category: 'anime', 
+      price: '10',
+      badge: 'PREMIUM',
+      edition: 'exclusive'
+    },
+    { id: 4, image: '/sticker2.png', name: 'En stock', category: 'troll', price: '3.500' },
+
+    { id: 5, image: '/choufli hal.png', name: 'En stock', category: 'choufli hal', price: '3.500' },
+
   ];
 
   const handleOrder = () => {
@@ -28,7 +54,7 @@ export default function CreationsSection() {
             </span>
           </div>
           <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
-            Nos Créations
+            Nos Nouveautés
           </h2>
         </div>
 
@@ -40,29 +66,67 @@ export default function CreationsSection() {
               onClick={() => setSelectedProduct(product)}
               className="group relative bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all cursor-pointer"
             >
-              {product.badge && (
+              {/* Badges */}
+              {product.discount && (
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="bg-black text-white text-xs font-medium uppercase tracking-wider px-3 py-1.5 rounded">
-                    {product.badge}
+                  <span className="bg-red-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
+                    -{product.discount}%
+                  </span>
+                </div>
+              )}
+              
+              {product.badge === 'PREMIUM' && !product.discount && (
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
+                    ⭐ PREMIUM
+                  </span>
+                </div>
+              )}
+
+              {product.edition === 'exclusive' && (
+                <div className="absolute top-4 right-4 z-10">
+                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md animate-pulse">
+                    ⭐ EXCLUSIF
                   </span>
                 </div>
               )}
 
               <div className="aspect-square bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-100 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                <img 
-                  src={product.image} 
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
+                {product.images ? (
+                  <div className="grid grid-cols-2 h-full">
+                    <img 
+                      src={product.images[0]} 
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <img 
+                      src={product.images[1]} 
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                ) : (
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-300"
+                  />
+                )}
               </div>
 
               <div className="p-6">
                 <p className="text-sm text-gray-600 uppercase tracking-wider font-light mb-1">
+                  {product.category}
                 </p>
-                <h3 className="text-xl font-medium text-gray-900 mb-3">{product.name}</h3>
+                <h3 className="text-xl font-medium text-green-600 mb-3">{product.name}</h3>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-black">{product.price}DT</span>
+                  <div className="flex items-center gap-2">
+                    {product.originalPrice && (
+                      <span className="text-sm text-gray-400 line-through">{product.originalPrice}DT</span>
+                    )}
+                    <span className="text-2xl font-bold text-black">{product.price}DT</span>
+                  </div>
                   <button className="p-2.5 rounded-lg hover:bg-gray-100 transition">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -78,77 +142,79 @@ export default function CreationsSection() {
       {/* Modal */}
       {selectedProduct && (
         <div 
-          className="fixed inset-0 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 flex items-center justify-center z-50 p-4 bg-black/60 backdrop-blur-sm"
           onClick={() => setSelectedProduct(null)}
         >
           <div 
-            className="bg-white rounded-3xl max-w-2xl w-full relative shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-gray-100"
+            className="bg-white rounded-3xl max-w-3xl w-full relative shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedProduct(null)}
-              className="absolute -top-3 -right-3 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-all z-10"
+              className="absolute -top-3 -right-3 w-12 h-12 bg-black rounded-full shadow-xl flex items-center justify-center text-white hover:bg-gray-800 transition-all z-10"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              ✕
             </button>
 
-            <div className="p-8">
-              <div className="flex flex-col md:flex-row gap-8">
-                {/* Image du produit */}
-                <div className="md:w-1/2">
-                  <div className="aspect-square rounded-2xl overflow-hidden flex items-center justify-center bg-gray-50">
+            <div className="grid md:grid-cols-2 gap-0">
+              {/* Image du produit */}
+              <div className="relative bg-gray-100">
+                {selectedProduct.images ? (
+                  <div className="grid grid-rows-2 h-full">
                     <img 
-                      src={selectedProduct.image} 
+                      src={selectedProduct.images[0]} 
                       alt={selectedProduct.name}
-                      className="w-full h-full object-contain p-4"
+                      className="w-full h-full object-cover"
+                    />
+                    <img 
+                      src={selectedProduct.images[1]} 
+                      alt={selectedProduct.name}
+                      className="w-full h-full object-cover"
                     />
                   </div>
+                ) : (
+                  <img 
+                    src={selectedProduct.image} 
+                    alt={selectedProduct.name}
+                    className="w-full h-full object-contain bg-gray-50 min-h-[500px]"
+                  />
+                )}
+              </div>
+
+              {/* Détails du produit */}
+              <div className="p-8 flex flex-col justify-center space-y-6">
+                <div>
+                  <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">{selectedProduct.category}</p>
+                  <h2 className="text-3xl font-serif mb-2 text-green-600">{selectedProduct.name}</h2>
+                  <p className="text-gray-800">Résine époxy • Pièce unique</p>
                 </div>
 
-                {/* Détails du produit */}
-                <div className="md:w-1/2 flex flex-col justify-between">
-                  <div>
-                    <p className="text-xs text-gray-500 uppercase tracking-[0.2em] font-semibold mb-3">
-                      {selectedProduct.category}
-                    </p>
-                    <h3 className="text-3xl font-bold text-gray-900 mb-4">{selectedProduct.name}</h3>
-                    <p className="text-4xl font-bold text-black mb-6">{selectedProduct.price}</p>
-                    
-                    <div className="space-y-3 text-sm text-gray-700 mb-6">
-                      <div className="flex items-start gap-3">
-                        <span className="text-green-600 text-lg">✓</span>
-                        <span>Sticker en vinyle haute qualité</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <span className="text-green-600 text-lg">✓</span>
-                        <span>Résistant à l'eau et aux UV</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <span className="text-green-600 text-lg">✓</span>
-                        <span>Adhésif repositionnable</span>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <span className="text-green-600 text-lg">✓</span>
-                        <span>Parfait pour personnaliser vos objets</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <button
-                      onClick={handleOrder}
-className="w-full px-6 md:px-8 py-3 md:py-4 bg-black text-white font-bold tracking-wider text-sm md:text-lg rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-2 md:gap-3"
-                    >
-                      <span className="text-xl">📸</span>
-                      COMMANDER SUR INSTAGRAM
-                    </button>
-                    <p className="text-center text-xs text-gray-500 mt-3">
-                      Vous serez redirigé vers notre page Instagram
-                    </p>
-                  </div>
+                <div className="flex items-center gap-3">
+                  {selectedProduct.originalPrice && (
+                    <p className="text-gray-400 line-through text-xl">{selectedProduct.originalPrice}DT</p>
+                  )}
+                  <p className="text-4xl font-bold text-black">{selectedProduct.price}DT</p>
+                  {selectedProduct.discount && (
+                    <span className="bg-red-600 text-white px-2 py-1 rounded text-sm font-bold">
+                      -{selectedProduct.discount}%
+                    </span>
+                  )}
                 </div>
+
+                <div className="bg-gray-50 rounded-lg p-4 space-y-2">
+                  <p className="text-sm text-gray-700">✓ Résine époxy cristalline premium</p>
+                  <p className="text-sm text-gray-700">✓ Pièce unique - Jamais identique</p>
+                  <p className="text-sm text-gray-700">✓ Livraison offerte</p>
+                </div>
+
+                <button
+                  onClick={handleOrder}
+                  className="w-full px-8 py-4 bg-black text-white font-serif tracking-wider text-lg rounded-lg hover:opacity-90 transition-all shadow-lg flex items-center justify-center gap-3"
+                >
+                  📸 COMMANDER SUR INSTAGRAM
+                </button>
+
+                <p className="text-xs text-center text-gray-500">Vous serez redirigé vers notre page Instagram</p>
               </div>
             </div>
           </div>

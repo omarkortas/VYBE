@@ -24,7 +24,7 @@ export default function Header() {
         {/* Navigation */}
         <nav className="hidden md:flex items-center gap-10 lg:gap-14 text-sm tracking-wider font-light">
           <NavLink href="/collections">COLLECTIONS</NavLink>
-          <NavLink href="/creations">CRÉATIONS</NavLink>
+          <NavLink href="/creations">EXCLUSIVES</NavLink>
           <NavLink href="/about">VYBE</NavLink>
           <NavLink href="/contact">CONTACT</NavLink>
         </nav>

@@ -49,10 +49,6 @@ export default function HeroSection() {
               <div className="w-2 h-2 bg-stone-900 rounded-full"></div>
               <span className="text-stone-500 font-light">Edition Limitée</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-stone-900 rounded-full"></div>
-              <span className="text-stone-500 font-light">Livraison Mondiale</span>
-            </div>
           </div>
         </div>
 
