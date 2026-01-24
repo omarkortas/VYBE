@@ -5,12 +5,14 @@ import CreationsSection from "./creations/page"
 import CollectionsSection from "./collections/page"
 import VybeSection from "../app/vybesection"
 import Omar from "../app/omar"
-
+import NewArrivalsSection from "./arriivage/page";
 export default function Page() {
   return (
     <>
       <HeroSection />
       <CollectionsSection />
+            <NewArrivalsSection />
+
       <CreationsSection />
       <Omar />
       <VybeSection />
