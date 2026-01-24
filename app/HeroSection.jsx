@@ -11,7 +11,7 @@ export default function HeroSection() {
           {/* Badge premium */}
           <div className="mb-12">
             <span className="inline-block text-xs tracking-[0.4em] uppercase text-stone-400 font-light border border-stone-200 px-6 py-3 rounded-full">
-              Collection 2025
+              Collection 2026
             </span>
           </div>
 
