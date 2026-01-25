@@ -17,6 +17,8 @@ export default function PorteClesPage() {
   ];
 
   const porteCles = [
+        { id: 111155, image: '/leo.png', name: 'En stock', category: 'anime', price: '3' },
+    { id: 121266, image: '/cr7.png', name: 'En stock', category: 'anime', price: '3' },
         { id: 199999, image: '/demon1.png', name: 'En stock', category: 'anime', price: '7' },
     { id: 1111, image: '/demon2.png', name: 'En stock', category: 'anime', price: '7' },
     { id: 1212, image: '/demon3.png', name: 'En stock', category: 'anime', price: '7' },
