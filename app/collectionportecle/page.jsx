@@ -35,7 +35,7 @@ export default function PorteClesPage() {
     { id: 1897, image: '/onep3.png', name: 'En stock', category: 'anime', price: '12' , edition: 'exclusive'},
     { id: 1987, image: '/onep4.png', name: 'En stock', category: 'anime', price: '12', edition: 'exclusive' },
     { id: 198796, image: '/onep5.png', name: 'En stock', category: 'anime', price: '12' , edition: 'exclusive'},
-        { id: 119999229, image: '/rob1.png', name: 'En stock', category: 'anime', price: '10', edition: 'exclusive' },
+        { id: 119999229, image: '/rob.png', name: 'En stock', category: 'anime', price: '10', edition: 'exclusive' },
 
     { id: 12, image: '/k.png', name: 'Rupture de stock', category: 'anime', price: '7',  },
 
