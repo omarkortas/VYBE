@@ -35,12 +35,14 @@ export default function PorteClesPage() {
     { id: 1897, image: '/onep3.png', name: 'En stock', category: 'anime', price: '12' , edition: 'exclusive'},
     { id: 1987, image: '/onep4.png', name: 'En stock', category: 'anime', price: '12', edition: 'exclusive' },
     { id: 198796, image: '/onep5.png', name: 'En stock', category: 'anime', price: '12' , edition: 'exclusive'},
+        { id: 119999229, image: '/rob1.png', name: 'En stock', category: 'anime', price: '10', edition: 'exclusive' },
+
+    { id: 12, image: '/k.png', name: 'Rupture de stock', category: 'anime', price: '7',  },
 
     { id: 24, images: ['/stouch.png', '/stouch1.png'], name: 'En stock', category: 'trousse', price: '10', originalPrice: '12', discount: '17', sold: true  },
     { id: 11, image: '/l.png', name: 'Rupture de stock', category: 'anime', price: '8',},
     { id: 16, image: '/cc.jpeg', name: 'En stock', category: 'anime', price: '8' },
     { id: 3, image: '/c.png', name: 'En stock', category: 'animaux', price: '7', sold: true },
-    { id: 12, image: '/k.png', name: 'Rupture de stock', category: 'anime', price: '7',  },
     { id: 8, image: '/g.png', name: 'Rupture de stock', category: 'games', price: '4', sold: true },
     { id: 17, image: '/sanfour.png', name: 'En stock', category: 'anime', price: '7' },
     { id: 1, image: '/a.png', name: 'En stock', category: 'labubu', price: '7' },
