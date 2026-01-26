@@ -5,37 +5,15 @@ export default function CreationsSection() {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const products = [
-    { 
-      id: 1, 
-      images: ['/stouch.png', '/stouch1.png'], 
-      name: 'En stock', 
-      category: 'trousse', 
-      price: '10', 
-      originalPrice: '12', 
-      discount: '17',
-      badge: 'PROMO'
-    },
-    { 
-      id: 2, 
-      image: '/aa.png', 
-      name: 'En stock', 
-      category: 'anime', 
-      price: '10',
-      badge: 'PREMIUM',
-      edition: 'exclusive'
-    },
-    { 
-      id: 3, 
-      image: '/bb.png', 
-      name: 'En stock', 
-      category: 'anime', 
-      price: '10',
-      badge: 'PREMIUM',
-      edition: 'exclusive'
-    },
+    { id: 19999229, image: '/drag1.png', name: 'En stock', category: 'anime', price: '10',      badge: 'PREMIUM', edition: 'exclusive' },
+
+    { id: 1111, image: '/demon3.png', name: 'En stock', category: 'anime', price: '12', edition: 'exclusive', badge: 'PREMIUM',},
+
+    { id: 121211, image: '/naruto1.png', name: 'En stock', category: 'anime', price: '12', edition: 'exclusive', badge: 'PREMIUM',},
+
     { id: 4, image: '/sticker2.png', name: 'En stock', category: 'troll', price: '3.500' },
 
-    { id: 5, image: '/choufli hal.png', name: 'En stock', category: 'choufli hal', price: '3.500' },
+    { id: 5, image: '/choufli hal.png', name: 'En stock', category: 'choufli hal', price: '3.500', },
 
   ];
 

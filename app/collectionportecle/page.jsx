@@ -18,9 +18,12 @@ export default function PorteClesPage() {
   ];
 
   const porteCles = [
-        { id: 111155, image: '/leo.png', name: 'En stock', category: 'football', price: '3' },
+    { id: 111155, image: '/leo.png', name: 'En stock', category: 'football', price: '3' },
     { id: 121266, image: '/cr7.png', name: 'En stock', category: 'football', price: '3' },
-        { id: 199999, image: '/demon1.png', name: 'En stock', category: 'anime', price: '12', edition: 'exclusive' },
+    { id: 19999229, image: '/drag1.png', name: 'En stock', category: 'anime', price: '10', edition: 'exclusive' },
+    { id: 1999991, image: '/drag2.png', name: 'En stock', category: 'anime', price: '10', edition: 'exclusive' },
+    { id: 1999929, image: '/drag3.png', name: 'En stock', category: 'anime', price: '10', edition: 'exclusive' },       
+    { id: 199999, image: '/demon1.png', name: 'En stock', category: 'anime', price: '12', edition: 'exclusive' },
     { id: 1111, image: '/demon2.png', name: 'En stock', category: 'anime', price: '12', edition: 'exclusive' },
     { id: 1212, image: '/demon3.png', name: 'En stock', category: 'anime', price: '12' , edition: 'exclusive', sold: true},
     { id: 21211, image: '/demon4.png', name: 'En stock', category: 'anime', price: '12', edition: 'exclusive' },

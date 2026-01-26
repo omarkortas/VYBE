@@ -30,6 +30,14 @@ export default function NewArrivalsSection() {
        badge: 'NOUVEAU',
       isNew: true
     },
+        { 
+       id: 3,
+       video: '/drag.mp4',
+       name: 'Nouvel arrivage',
+       category: 'premium',
+       badge: 'NOUVEAU',
+      isNew: true
+    },
   ];
 
   const handleOrder = () => {
@@ -167,7 +175,7 @@ export default function NewArrivalsSection() {
               
               <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
                 <a
-                  href="/collections"
+                  href="/collectionportecle"
                   className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl"
                 >
                   <span>👀</span>
