@@ -3,65 +3,106 @@ import { useState } from 'react';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [collectionsOpen, setCollectionsOpen] = useState(false);
+  const [mobileCollectionsOpen, setMobileCollectionsOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full py-4 md:py-5 border-b border-black bg-white">
       <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-12 flex items-center justify-between">
+
         {/* Logo */}
-        <a 
-          href="/" 
-          className="text-2xl md:text-3xl font-medium tracking-wider text-black hover:opacity-70 transition-opacity"
+        <a
+          href="/"
+          className="text-2xl md:text-3xl font-medium tracking-wider text-black"
         >
           VYBE
         </a>
 
-        {/* Navigation Desktop */}
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-12 text-sm tracking-wider font-light">
-          <NavLink href="/collections">COLLECTIONS</NavLink>
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-8 text-sm tracking-wider font-light">
+
+          <div
+            className="relative"
+            onMouseEnter={() => setCollectionsOpen(true)}
+            onMouseLeave={() => setCollectionsOpen(false)}
+          >
+            <NavLink href="/collections">COLLECTIONS</NavLink>
+
+            {/* Desktop Dropdown */}
+            <div
+              className={`absolute top-full left-0 mt-2 w-48 bg-white border border-black shadow-lg transition-all duration-200 ${
+                collectionsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+              }`}
+            >
+              <a href="/collectionstickers" className="block px-6 py-3 text-black hover:bg-gray-50">
+                STICKERS
+              </a>
+              <a href="/collectionportecle" className="block px-6 py-3 text-black hover:bg-gray-50">
+                PORTE-CLÉ
+              </a>
+              <span className="block px-6 py-3 text-black/50">
+                HOODIE (BIENTÔT)
+              </span>
+            </div>
+          </div>
+
           <NavLink href="/creations">EXCLUSIVES</NavLink>
           <NavLink href="/about">VYBE</NavLink>
           <NavLink href="/contact">CONTACT</NavLink>
         </nav>
 
-        {/* Bouton Boutique Desktop */}
+        {/* Boutique Desktop */}
         <a
           href="/"
-          className="hidden md:block px-6 lg:px-7 py-3 text-sm tracking-wider font-medium text-black border border-black hover:bg-black hover:text-white transition-colors duration-300"
+          className="hidden md:block px-6 py-3 text-sm font-medium text-black border border-black"
         >
           BOUTIQUE
         </a>
 
-        {/* Menu Burger Mobile */}
+        {/* Burger */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden flex flex-col gap-1.5 w-7 h-7 justify-center"
-          aria-label="Menu"
+          className="lg:hidden w-7 h-7 flex flex-col justify-center gap-1.5"
         >
-          <span className={`w-full h-0.5 bg-black transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`w-full h-0.5 bg-black transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`w-full h-0.5 bg-black transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          <span className={`h-0.5 bg-black ${mobileMenuOpen && 'rotate-45 translate-y-2'}`} />
+          <span className={`h-0.5 bg-black ${mobileMenuOpen && 'opacity-0'}`} />
+          <span className={`h-0.5 bg-black ${mobileMenuOpen && '-rotate-45 -translate-y-2'}`} />
         </button>
       </div>
 
-      {/* Menu Mobile */}
-      <div className={`lg:hidden overflow-hidden transition-all duration-300 ${mobileMenuOpen ? 'max-h-96 border-t border-gray-200' : 'max-h-0'}`}>
-        <nav className="flex flex-col bg-white">
-          <MobileNavLink href="/collections" onClick={() => setMobileMenuOpen(false)}>
+      {/* Mobile Menu */}
+      <div className={`lg:hidden overflow-hidden transition-all ${mobileMenuOpen ? 'max-h-[500px]' : 'max-h-0'}`}>
+        <nav className="flex flex-col border-t border-gray-200">
+
+          {/* Mobile COLLECTIONS */}
+          <button
+            onClick={() => setMobileCollectionsOpen(!mobileCollectionsOpen)}
+            className="px-6 py-4 text-left text-black border-b border-gray-100"
+          >
             COLLECTIONS
-          </MobileNavLink>
-          <MobileNavLink href="/creations" onClick={() => setMobileMenuOpen(false)}>
-            EXCLUSIVES
-          </MobileNavLink>
-          <MobileNavLink href="/about" onClick={() => setMobileMenuOpen(false)}>
-            VYBE
-          </MobileNavLink>
-          <MobileNavLink href="/contact" onClick={() => setMobileMenuOpen(false)}>
-            CONTACT
-          </MobileNavLink>
+          </button>
+
+          {mobileCollectionsOpen && (
+            <div className="pl-6">
+              <a href="/collectionstickers" className="block py-3 text-black">
+                STICKERS
+              </a>
+              <a href="/collectionportecle" className="block py-3 text-black">
+                PORTE-CLÉ
+              </a>
+              <span className="block py-3 text-black/50">
+                HOODIE (BIENTÔT)
+              </span>
+            </div>
+          )}
+
+          <MobileLink href="/creations">EXCLUSIVES</MobileLink>
+          <MobileLink href="/about">VYBE</MobileLink>
+          <MobileLink href="/contact">CONTACT</MobileLink>
+
           <a
             href="/"
-            className="mx-4 my-3 px-6 py-3 text-center text-sm tracking-wider font-medium text-black border border-black hover:bg-black hover:text-white transition-colors"
-            onClick={() => setMobileMenuOpen(false)}
+            className="m-4 px-6 py-3 text-center text-black border border-black"
           >
             BOUTIQUE
           </a>
@@ -73,23 +114,16 @@ export default function Header() {
 
 function NavLink({ href, children }) {
   return (
-    <a 
-      href={href}
-      className="text-black hover:text-gray-600 transition-colors relative group"
-    >
+    <a href={href} className="relative text-black group">
       {children}
-      <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-black group-hover:w-full transition-all duration-300" />
+      <span className="absolute left-0 -bottom-1 w-0 h-px bg-black group-hover:w-full transition-all" />
     </a>
   );
 }
 
-function MobileNavLink({ href, children, onClick }) {
+function MobileLink({ href, children }) {
   return (
-    <a 
-      href={href}
-      onClick={onClick}
-      className="px-6 py-4 text-sm tracking-wider font-light text-black hover:bg-gray-50 transition-colors border-b border-gray-100"
-    >
+    <a href={href} className="px-6 py-4 text-black border-b border-gray-100">
       {children}
     </a>
   );

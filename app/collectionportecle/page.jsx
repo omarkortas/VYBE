@@ -20,6 +20,9 @@ export default function PorteClesPage() {
   const porteCles = [
     { id: 111155, image: '/leo.png', name: 'En stock', category: 'football', price: '3' },
     { id: 121266, image: '/cr7.png', name: 'En stock', category: 'football', price: '3' },
+        { id: 192999229, image: '/tom.png', name: 'En stock', category: 'anime', price: '10', edition: 'exclusive' ,sold: true},
+
+        { id: 4, image: '/d.png', name: 'En stock', category: 'anime', price: '4' },
     { id: 19999229, image: '/drag1.png', name: 'En stock', category: 'anime', price: '10', edition: 'exclusive' },
     { id: 1999991, image: '/drag2.png', name: 'En stock', category: 'anime', price: '10', edition: 'exclusive' },
     { id: 1999929, image: '/drag3.png', name: 'En stock', category: 'anime', price: '10', edition: 'exclusive' },       
@@ -47,7 +50,6 @@ export default function PorteClesPage() {
     { id: 17, image: '/sanfour.png', name: 'En stock', category: 'anime', price: '7' },
     { id: 1, image: '/a.png', name: 'En stock', category: 'labubu', price: '7' },
     { id: 2, image: '/b.png', name: 'En stock', category: 'animaux', price: '7' },
-    { id: 4, image: '/d.png', name: 'En stock', category: 'anime', price: '4' },
     { id: 5, image: '/e.png', name: 'En stock', category: 'labubu', price: '8' },
     { id: 6, image: '/f.png', name: 'En stock', category: 'labubu', price: '8' },
     { id: 7, image: '/h.png', name: 'En stock', category: 'games', price: '4' },
